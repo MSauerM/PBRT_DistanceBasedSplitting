@@ -55,7 +55,7 @@ struct LinearBVHNode;
 class BVHAccel : public Aggregate {
   public:
     // BVHAccel Public Types
-    enum class SplitMethod { SAH, HLBVH, Middle, EqualCounts };
+    enum class SplitMethod { SAH, HLBVH, Middle, EqualCounts, Distance }; // MSauer: Here is the enum for adding the method
 
     // BVHAccel Public Methods
     BVHAccel(std::vector<std::shared_ptr<Primitive>> p,

@@ -38,6 +38,7 @@
 #include "stats.h"
 #include "parallel.h"
 #include <algorithm>
+#include <iostream>
 
 namespace pbrt {
 
@@ -45,6 +46,12 @@ STAT_MEMORY_COUNTER("Memory/BVH tree", treeBytes);
 STAT_RATIO("BVH/Primitives per leaf node", totalPrimitives, totalLeafNodes);
 STAT_COUNTER("BVH/Interior nodes", interiorNodes);
 STAT_COUNTER("BVH/Leaf nodes", leafNodes);
+STAT_COUNTER("BVH/Traversal Steps", traversalSteps);
+
+//STAT_COUNTER("BVH/Total Splits", totalSplits);
+//STAT_COUNTER("BVH/Accumulated SAH", sumSAH);
+STAT_RATIO("BVH/Average SAH", sumSAH, totalSplits);
+
 
 // BVHAccel Local Declarations
 struct BVHPrimitiveInfo {
@@ -274,7 +281,194 @@ BVHBuildNode *BVHAccel::recursiveBuild(
             return node;
         } else {
             // Partition primitives based on _splitMethod_
+            totalSplits++;
             switch (splitMethod) {
+                case SplitMethod::Distance:{
+                    BVHPrimitiveInfo ref1;
+                    BVHPrimitiveInfo ref2;
+
+                    int xLowIndex = start,
+                    xHighIndex = start,
+                    yLowIndex = start,
+                    yHighIndex = start,
+                    zLowIndex =  start,
+                    zHighIndex = start;
+
+                    float maxdistance = 0;
+
+                   // xyz-MaximumExtent-Approach
+                    for (int i = start; i < end; i++) {
+
+                        if(primitiveInfo[xLowIndex].centroid.x > primitiveInfo[i].centroid.x){
+                            xLowIndex = i;
+                        }
+
+                        if(primitiveInfo[xHighIndex].centroid.x < primitiveInfo[i].centroid.x){
+                            xHighIndex = i;
+                        }
+
+                        if(primitiveInfo[yLowIndex].centroid.y > primitiveInfo[i].centroid.y){
+                            yLowIndex = i;
+                        }
+
+                        if(primitiveInfo[yHighIndex].centroid.y < primitiveInfo[i].centroid.y){
+                            yHighIndex = i;
+                        }
+
+                        if(primitiveInfo[zLowIndex].centroid.z > primitiveInfo[i].centroid.z){
+                            zLowIndex = i;
+                        }
+
+                        if(primitiveInfo[zHighIndex].centroid.z < primitiveInfo[i].centroid.z){
+                            zHighIndex = i;
+                        }
+
+                    }
+
+                    std::vector<int> maxExtents = { xLowIndex, xHighIndex, yLowIndex, yHighIndex, zLowIndex, zHighIndex};
+
+                    for (int j = 0; j < maxExtents.size(); j++) {
+                        for (int x = 0; x< maxExtents.size(); x++){
+
+                            Vector3f distancevector = primitiveInfo[maxExtents[j]].centroid - primitiveInfo[maxExtents[x]].centroid;
+                            double currentdistance =
+                                    sqrt((distancevector.x*distancevector.x)
+                                         + (distancevector.y * distancevector.y)
+                                         + (distancevector.z* distancevector.z)
+                                    );
+                            if(currentdistance>= maxdistance){
+                                ref1 = primitiveInfo[maxExtents[j]];
+                                ref2 = primitiveInfo[maxExtents[x]];
+                                maxdistance = currentdistance;
+                            }
+
+                        }
+                    }
+
+                    Vector3f ref2ToRef1 = ref1.centroid - ref2.centroid;
+
+
+                    // Construct a plain vertical to the distance Vector
+                    Point3f midPoint =ref2.centroid +(ref2ToRef1)/2;
+/*
+                    Vector3f midPointToRef1 = ref2ToRef1/2;
+
+                    Vector3f constructionVector= Vector3f(0,1,0);
+
+                    Vector3f firstOrthogonalVec = Vector3f(0,0,0);
+                    Vector3f secondOrthogonalVec = Vector3f(0,0,0);
+
+                    firstOrthogonalVec.x = midPointToRef1.y * constructionVector.z - constructionVector.y * midPointToRef1.z;
+                    firstOrthogonalVec.y = constructionVector.x * midPointToRef1.z - midPointToRef1.x * constructionVector.z;
+                    firstOrthogonalVec.z = midPointToRef1.x * constructionVector.y - constructionVector.x * midPointToRef1.y;
+
+                    secondOrthogonalVec.x = midPointToRef1.y * firstOrthogonalVec.z - firstOrthogonalVec.y * midPointToRef1.z;
+                    secondOrthogonalVec.y = firstOrthogonalVec.x * midPointToRef1.z - midPointToRef1.x * firstOrthogonalVec.z;
+                    secondOrthogonalVec.z = midPointToRef1.x * firstOrthogonalVec.y - firstOrthogonalVec.x * midPointToRef1.y;
+
+//                    |A| = a(ei − fh) − b(di − fg) + c(dh − eg)
+                    // FirstorthogonalVector, secondOrthogonalVector, Vector To point
+                    float determinant = firstOrthogonalVec.x*(secondOrthogonalVec.y*midPointToRef1.z- midPointToRef1.y * secondOrthogonalVec.z)
+                            - secondOrthogonalVec.x * (firstOrthogonalVec.y * midPointToRef1.z - midPointToRef1.y * firstOrthogonalVec.z )
+                            + midPointToRef1.x* (firstOrthogonalVec.y * secondOrthogonalVec.z  - secondOrthogonalVec.y * firstOrthogonalVec.z);
+*/
+
+//                    std::cout << "REF1: "<< determinant << "\n";
+
+                    // two Vectors from midPoint which are vertical to the vector
+
+                    // first Point: Rotate ref2ToRef
+
+                    // testCase
+
+
+
+                    BVHPrimitiveInfo *startSecondSubset =
+                            std::partition(&primitiveInfo[start], &primitiveInfo[end-1]+1,
+                                                                                 [=](const BVHPrimitiveInfo &prim){
+                                                                                                            /*
+                                                                                     Vector3f primVector = prim.centroid-midPoint;
+                                                                                     float primDeterminant = firstOrthogonalVec.x * ( secondOrthogonalVec.y * primVector.z - primVector.y* secondOrthogonalVec.z )
+                                                                                             - secondOrthogonalVec.x * ( firstOrthogonalVec.y * primVector.z-  primVector.y * firstOrthogonalVec.z)
+                                                                                             + primVector.x * (firstOrthogonalVec.y * secondOrthogonalVec.z - secondOrthogonalVec.y * firstOrthogonalVec.z);
+
+                                                                                             return primDeterminant>0;
+                                                                                   */
+                                                                                     Vector3f distanceVectorRef1 = prim.centroid - ref1.centroid;
+                                                                                     double distanceToRef1 = sqrt((distanceVectorRef1.x *distanceVectorRef1.x)
+                                                                                                                  +(distanceVectorRef1.y *distanceVectorRef1.y)
+                                                                                                                  +(distanceVectorRef1.z *distanceVectorRef1.z)
+                                                                                     );
+
+                                                                                     Vector3f distanceVectorRef2 = prim.centroid - ref2.centroid;
+                                                                                     double distanceToRef2 =  sqrt((distanceVectorRef2.x *distanceVectorRef2.x)
+                                                                                                                   +(distanceVectorRef2.y *distanceVectorRef2.y)
+                                                                                                                   +(distanceVectorRef2.z *distanceVectorRef2.z)
+                                                                                     );
+
+                                                                                     return distanceToRef1<distanceToRef2;
+
+                                                                                 });
+                    mid = startSecondSubset - &primitiveInfo[0];
+
+                    if(mid != start && mid != end) {
+                        float cost;
+                        int count0, count1;
+                        Bounds3f b0, b1;
+                        for (int i = start; i < mid; i++) {
+                            count0 ++;
+                            b0 = Union(b0,primitiveInfo[i].bounds);
+                        }
+
+                        for (int j = mid; j < end; j++) {
+                            count1 ++;
+                            b1 = Union(b1, primitiveInfo[j].bounds);
+                        }
+
+                        cost = 1 +
+                               (count0 * b0.SurfaceArea() +
+                                count1 * b1.SurfaceArea()) /
+                               bounds.SurfaceArea();
+                        sumSAH += cost;
+                        //sahOverall  += cost;
+                        //std::cout <<"Average"<< sahOverall/totalSplits <<"\n";
+                        break;
+                    }
+                    else{
+                        // Equal Counts for lots of prims with larger overlapping boundingBoxes
+                        mid = (start + end) / 2;
+                        float cost;
+                        int count0, count1;
+                        Bounds3f b0, b1;
+                        for (int i = start; i < mid; i++) {
+                            count0 ++;
+                            b0 = Union(b0,primitiveInfo[i].bounds);
+                        }
+
+                        for (int j = mid; j < end; j++) {
+                            count1 ++;
+                            b1 = Union(b1, primitiveInfo[j].bounds);
+                        }
+
+                        cost = 1 +
+                               (count0 * b0.SurfaceArea() +
+                                count1 * b1.SurfaceArea()) /
+                               bounds.SurfaceArea();
+                        sumSAH += cost;
+                       // sahOverall  += cost;
+                       // std::cout <<"Average"<< sahOverall/totalSplits <<"\n";
+
+                        std::nth_element(&primitiveInfo[start], &primitiveInfo[mid],
+                                         &primitiveInfo[end - 1] + 1,
+                                         [dim](const BVHPrimitiveInfo &a,
+                                               const BVHPrimitiveInfo &b) {
+                                             return a.centroid[dim] < b.centroid[dim];
+                                         });
+                        break;
+                    }
+
+                }
+
             case SplitMethod::Middle: {
                 // Partition primitives through node's midpoint
                 Float pmid =
@@ -285,15 +479,91 @@ BVHBuildNode *BVHAccel::recursiveBuild(
                         return pi.centroid[dim] < pmid;
                     });
                 mid = midPtr - &primitiveInfo[0];
+
                 // For lots of prims with large overlapping bounding boxes, this
                 // may fail to partition; in that case don't break and fall
                 // through
                 // to EqualCounts.
-                if (mid != start && mid != end) break;
+                if (mid != start && mid != end){
+                    float cost;
+                    int count0, count1;
+                    Bounds3f b0, b1;
+                    for (int i = start; i < mid; i++) {
+                        count0 ++;
+                        b0 = Union(b0,primitiveInfo[i].bounds);
+                    }
+
+                    for (int j = mid; j < end; j++) {
+                        count1 ++;
+                        b1 = Union(b1, primitiveInfo[j].bounds);
+                    }
+
+                    cost = 1 +
+                           (count0 * b0.SurfaceArea() +
+                            count1 * b1.SurfaceArea()) /
+                           bounds.SurfaceArea();
+                    sumSAH += cost;
+                  //  sahOverall  += cost;
+                  //  std::cout <<"Average"<< sahOverall/totalSplits <<"\n";
+                    break;
+                }
+                else{
+                    mid = (start + end) / 2;
+                    float cost;
+                    int count0, count1;
+                    Bounds3f b0, b1;
+                    for (int i = start; i < mid; i++) {
+                        count0 ++;
+                        b0 = Union(b0,primitiveInfo[i].bounds);
+                    }
+
+                    for (int j = mid; j < end; j++) {
+                        count1 ++;
+                        b1 = Union(b1, primitiveInfo[j].bounds);
+                    }
+
+                    cost = 1 +
+                           (count0 * b0.SurfaceArea() +
+                            count1 * b1.SurfaceArea()) /
+                           bounds.SurfaceArea();
+                    sumSAH += cost;
+                   // sahOverall  += cost;
+                   // std::cout <<"Average"<< sahOverall/totalSplits <<"\n";
+                    std::nth_element(&primitiveInfo[start], &primitiveInfo[mid],
+                                     &primitiveInfo[end - 1] + 1,
+                                     [dim](const BVHPrimitiveInfo &a,
+                                           const BVHPrimitiveInfo &b) {
+                                         return a.centroid[dim] < b.centroid[dim];
+                                     });
+                    break;
+                }
             }
             case SplitMethod::EqualCounts: {
                 // Partition primitives into equally-sized subsets
                 mid = (start + end) / 2;
+                float cost;
+                int count0, count1;
+                Bounds3f b0, b1;
+                for (int i = start; i < mid; i++) {
+                    count0 ++;
+                    b0 = Union(b0,primitiveInfo[i].bounds);
+                }
+
+                for (int j = mid; j < end; j++) {
+                    count1 ++;
+                    b1 = Union(b1, primitiveInfo[j].bounds);
+                }
+
+                cost = 1 +
+                          (count0 * b0.SurfaceArea() +
+                           count1 * b1.SurfaceArea()) /
+                          bounds.SurfaceArea();
+
+                sumSAH += cost;
+               // std::cout<< "SAH: "<< cost << "\n";
+               // sahOverall  += cost;
+               // std::cout <<"Average"<< sahOverall/totalSplits <<"\n";
+
                 std::nth_element(&primitiveInfo[start], &primitiveInfo[mid],
                                  &primitiveInfo[end - 1] + 1,
                                  [dim](const BVHPrimitiveInfo &a,
@@ -361,7 +631,10 @@ BVHBuildNode *BVHAccel::recursiveBuild(
                             minCostSplitBucket = i;
                         }
                     }
-
+                    sumSAH+= minCost;
+                 //   sahOverall  += minCost;
+                 //   std::cout <<"Average"<< sahOverall/totalSplits <<"\n";
+                    // std::cout << "SAH: "<< minCost << "\n";
                     // Either create leaf or split primitives at selected SAH
                     // bucket
                     Float leafCost = nPrimitives;
@@ -691,6 +964,7 @@ bool BVHAccel::Intersect(const Ray &ray, SurfaceInteraction *isect) const {
                     currentNodeIndex = currentNodeIndex + 1;
                 }
             }
+            traversalSteps++;
         } else {
             if (toVisitOffset == 0) break;
             currentNodeIndex = nodesToVisit[--toVisitOffset];
@@ -749,6 +1023,8 @@ std::shared_ptr<BVHAccel> CreateBVHAccelerator(
         splitMethod = BVHAccel::SplitMethod::Middle;
     else if (splitMethodName == "equal")
         splitMethod = BVHAccel::SplitMethod::EqualCounts;
+    else if (splitMethodName == "distance")
+        splitMethod = BVHAccel::SplitMethod::Distance;
     else {
         Warning("BVH split method \"%s\" unknown.  Using \"sah\".",
                 splitMethodName.c_str());

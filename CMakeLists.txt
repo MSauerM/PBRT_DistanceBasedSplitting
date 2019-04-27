@@ -447,7 +447,7 @@ SET ( PBRT_CORE_HEADERS
   src/core/stringprint.h
   src/core/texture.h
   src/core/transform.h
-  )
+        )
 
 FILE ( GLOB PBRT_SOURCE
   src/ext/*
