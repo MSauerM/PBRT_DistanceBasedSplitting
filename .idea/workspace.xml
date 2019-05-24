@@ -8,16 +8,15 @@
       <config projectName="PBRT-V3" targetName="IlmImf-obj" />
       <config projectName="PBRT-V3" targetName="ExperimentalMemCheck" />
       <config projectName="PBRT-V3" targetName="Iex" />
-      <config projectName="PBRT-V3" targetName="stl_logging_unittest" />
       <config projectName="PBRT-V3" targetName="NightlyMemCheck" />
       <config projectName="PBRT-V3" targetName="ptxinfo" />
       <config projectName="PBRT-V3" targetName="ExperimentalUpdate" />
+      <config projectName="PBRT-V3" targetName="Half" />
       <config projectName="PBRT-V3" targetName="toFloat" />
       <config projectName="PBRT-V3" targetName="glog" />
       <config projectName="PBRT-V3" targetName="ContinuousMemCheck" />
       <config projectName="PBRT-V3" targetName="NightlySubmit" />
       <config projectName="PBRT-V3" targetName="Imath" />
-      <config projectName="PBRT-V3" targetName="Nightly" />
       <config projectName="PBRT-V3" targetName="ContinuousStart" />
       <config projectName="PBRT-V3" targetName="halftest" />
       <config projectName="PBRT-V3" targetName="ExperimentalBuild" />
@@ -25,35 +24,36 @@
       <config projectName="PBRT-V3" targetName="obj2pbrt" />
       <config projectName="PBRT-V3" targetName="NightlyConfigure" />
       <config projectName="PBRT-V3" targetName="ExperimentalTest" />
+      <config projectName="PBRT-V3" targetName="symbolize_unittest" />
       <config projectName="PBRT-V3" targetName="b44ExpLogTable" />
       <config projectName="PBRT-V3" targetName="dwaLookups" />
       <config projectName="PBRT-V3" targetName="rtest" />
       <config projectName="PBRT-V3" targetName="ExperimentalCoverage" />
       <config projectName="PBRT-V3" targetName="NightlyBuild" />
       <config projectName="PBRT-V3" targetName="NightlyCoverage" />
-      <config projectName="PBRT-V3" targetName="IlmThread" />
+      <config projectName="PBRT-V3" targetName="Nightly" />
       <config projectName="PBRT-V3" targetName="ExperimentalStart" />
       <config projectName="PBRT-V3" targetName="ContinuousTest" />
       <config projectName="PBRT-V3" targetName="pbrt_test" />
-      <config projectName="PBRT-V3" targetName="ContinuousCoverage" />
-      <config projectName="PBRT-V3" targetName="symbolize_unittest" />
+      <config projectName="PBRT-V3" targetName="Continuous" />
+      <config projectName="PBRT-V3" targetName="IlmThread" />
       <config projectName="PBRT-V3" targetName="Experimental" />
       <config projectName="PBRT-V3" targetName="logging_unittest" />
       <config projectName="PBRT-V3" targetName="signalhandler_unittest" />
-      <config projectName="PBRT-V3" targetName="utilities_unittest" />
-      <config projectName="PBRT-V3" targetName="Continuous" />
       <config projectName="PBRT-V3" targetName="imgtool" />
       <config projectName="PBRT-V3" targetName="pbrt_exe" />
       <config projectName="PBRT-V3" targetName="IexMath" />
+      <config projectName="PBRT-V3" targetName="CopyIlmBaseLibs" />
       <config projectName="PBRT-V3" targetName="stacktrace_unittest" />
-      <config projectName="PBRT-V3" targetName="wtest" />
       <config projectName="PBRT-V3" targetName="ContinuousUpdate" />
+      <config projectName="PBRT-V3" targetName="stl_logging_unittest" />
+      <config projectName="PBRT-V3" targetName="NightlyUpdate" />
       <config projectName="PBRT-V3" targetName="demangle_unittest" />
       <config projectName="PBRT-V3" targetName="bsdftest" />
-      <config projectName="PBRT-V3" targetName="CopyIlmBaseLibs" />
+      <config projectName="PBRT-V3" targetName="ContinuousCoverage" />
       <config projectName="PBRT-V3" targetName="cyhair2pbrt" />
       <config projectName="PBRT-V3" targetName="NightlyTest" />
-      <config projectName="PBRT-V3" targetName="Half" />
+      <config projectName="PBRT-V3" targetName="utilities_unittest" />
       <config projectName="PBRT-V3" targetName="pbrt" />
       <config projectName="PBRT-V3" targetName="Ptex_static" />
       <config projectName="PBRT-V3" targetName="ExperimentalConfigure" />
@@ -61,7 +61,7 @@
       <config projectName="PBRT-V3" targetName="ContinuousBuild" />
       <config projectName="PBRT-V3" targetName="NightlyMemoryCheck" />
       <config projectName="PBRT-V3" targetName="NightlyStart" />
-      <config projectName="PBRT-V3" targetName="NightlyUpdate" />
+      <config projectName="PBRT-V3" targetName="wtest" />
       <config projectName="PBRT-V3" targetName="ContinuousConfigure" />
     </generated>
   </component>
@@ -72,19 +72,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a33c3901-49e7-4ed2-a08f-7fae59f980eb" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/pbrt-v3.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/CMakeLists.txt.user" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scenes/killeroo-simple.pbrt" beforeDir="false" afterPath="$PROJECT_DIR$/scenes/killeroo-simple.pbrt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/accelerators/bvh.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/accelerators/bvh.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/accelerators/bvh.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/accelerators/bvh.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/core/api.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/src/core/api.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/../clion_test2/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -99,11 +89,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/accelerators/bvh.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="749" selection-start-line="749" selection-end-line="749" />
+            <state relative-caret-position="15">
+              <caret line="155" column="40" lean-forward="true" selection-start-line="155" selection-start-column="40" selection-end-line="155" selection-end-column="40" />
               <folding>
                 <element signature="e#1502#1531#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/core/bssrdf.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="675">
+              <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -116,17 +115,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
+            <state relative-caret-position="6015">
               <caret line="401" column="14" selection-start-line="401" selection-start-column="14" selection-end-line="401" selection-end-column="14" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/accelerators/bvh.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="720">
-              <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
+            <state relative-caret-position="182">
+              <caret line="57" column="74" lean-forward="true" selection-start-line="57" selection-start-column="74" selection-end-line="57" selection-end-column="74" />
               <folding>
                 <element signature="e#1498#1527#0" expanded="true" />
                 <element signature="e#1624#1641#0" expanded="true" />
@@ -144,11 +143,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/api.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="516">
-              <caret line="834" column="17" lean-forward="true" selection-start-line="834" selection-start-column="17" selection-end-line="834" selection-end-column="17" />
+            <state relative-caret-position="12510">
+              <caret line="834" column="17" selection-start-line="834" selection-start-column="17" selection-end-line="834" selection-end-column="17" />
               <folding>
                 <element signature="e#1493#1509#0" expanded="true" />
                 <element signature="e#1679#1708#0" expanded="true" />
@@ -173,7 +172,6 @@
       <find>switch</find>
       <find>Create</find>
       <find>distance</find>
-      <find>bvh</find>
       <find>nodes</find>
       <find>MakeAc</find>
       <find>node</find>
@@ -182,8 +180,15 @@
       <find>WorldBound</find>
       <find>CreateDistance</find>
       <find>CHECK</find>
-      <find>cout</find>
       <find>sahOverall</find>
+      <find>Distance</find>
+      <find>bvh</find>
+      <find>sumSAH</find>
+      <find>cout</find>
+      <find>cost</find>
+      <find>sumSah</find>
+      <find>Calculate</find>
+      <find>TotalSplits</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -193,12 +198,14 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/main/pbrt.cpp" />
-        <option value="$PROJECT_DIR$/src/accelerators/bvh.h" />
         <option value="$PROJECT_DIR$/src/accelerators/distancebvh.h" />
         <option value="$PROJECT_DIR$/src/accelerators/distancebvh.cpp" />
-        <option value="$PROJECT_DIR$/src/accelerators/bvh.cpp" />
         <option value="$PROJECT_DIR$/src/core/api.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
+        <option value="$PROJECT_DIR$/src/accelerators/sahcostcalculator.h" />
+        <option value="$PROJECT_DIR$/src/accelerators/sahcostcalculator.cpp" />
+        <option value="$PROJECT_DIR$/src/accelerators/bvh.cpp" />
+        <option value="$PROJECT_DIR$/src/accelerators/bvh.h" />
       </list>
     </option>
   </component>
@@ -213,7 +220,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -247,6 +253,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -671,12 +678,22 @@
       <workItem from="1556099137287" duration="3567000" />
       <workItem from="1556182469009" duration="11867000" />
       <workItem from="1556274494299" duration="4456000" />
-      <workItem from="1556384013666" duration="521000" />
+      <workItem from="1556384013666" duration="1109000" />
+      <workItem from="1556468541956" duration="4526000" />
+      <workItem from="1556739606877" duration="3859000" />
+      <workItem from="1556923634906" duration="691000" />
+      <workItem from="1556983755741" duration="1630000" />
+      <workItem from="1556985447900" duration="275000" />
+      <workItem from="1557129476661" duration="125000" />
+      <workItem from="1558080894640" duration="1401000" />
+      <workItem from="1558273492828" duration="2167000" />
+      <workItem from="1558424046725" duration="6083000" />
+      <workItem from="1558684715811" duration="1058000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88840000" />
+    <option name="totallyTimeSpent" value="111243000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -691,19 +708,19 @@
     <frame x="-1" y="0" width="1922" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12860192" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14354323" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32867885" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32867885" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32975295" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32867885" />
-      <window_info anchor="bottom" id="Terminal" order="9" weight="0.42320085" />
+      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.39957035" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32867885" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32975295" />
@@ -756,47 +773,41 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/accelerators/distancebvh.h">
+    <entry file="file://$PROJECT_DIR$/src/accelerators/distancebvh.h" />
+    <entry file="file://$PROJECT_DIR$/src/accelerators/distancebvh.cpp" />
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt.user">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-          <folding>
-            <element signature="e#102#119#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="139">
+          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/accelerators/distancebvh.cpp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="33" lean-forward="true" selection-start-line="26" selection-start-column="33" selection-end-line="26" selection-end-column="33" />
-          <folding>
-            <element signature="e#41#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/accelerators/sahcostcalculator.h" />
+    <entry file="file://$PROJECT_DIR$/src/accelerators/sahcostcalculator.cpp" />
     <entry file="file://$PROJECT_DIR$/src/accelerators/bvh.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="749" selection-start-line="749" selection-end-line="749" />
+        <state relative-caret-position="15">
+          <caret line="155" column="40" lean-forward="true" selection-start-line="155" selection-start-column="40" selection-end-line="155" selection-end-column="40" />
           <folding>
             <element signature="e#1502#1531#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/core/bssrdf.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="675">
+          <caret line="45" column="16" selection-start-line="45" selection-start-column="16" selection-end-line="45" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/scenes/README.md">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/accelerators/bvh.h">
+    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="720">
-          <caret line="48" column="32" selection-start-line="48" selection-start-column="32" selection-end-line="48" selection-end-column="32" />
-          <folding>
-            <element signature="e#1498#1527#0" expanded="true" />
-            <element signature="e#1624#1641#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="6015">
+          <caret line="401" column="14" selection-start-line="401" selection-start-column="14" selection-end-line="401" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -807,27 +818,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="401" column="14" selection-start-line="401" selection-start-column="14" selection-end-line="401" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/CMakeLists.txt.user">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="139">
-          <caret line="11" column="8" selection-start-line="11" selection-start-column="8" selection-end-line="11" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/api.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="516">
-          <caret line="834" column="17" lean-forward="true" selection-start-line="834" selection-start-column="17" selection-end-line="834" selection-end-column="17" />
+        <state relative-caret-position="12510">
+          <caret line="834" column="17" selection-start-line="834" selection-start-column="17" selection-end-line="834" selection-end-column="17" />
           <folding>
             <element signature="e#1493#1509#0" expanded="true" />
             <element signature="e#1679#1708#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/accelerators/bvh.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="57" column="74" lean-forward="true" selection-start-line="57" selection-start-column="74" selection-end-line="57" selection-end-column="74" />
+          <folding>
+            <element signature="e#1498#1527#0" expanded="true" />
+            <element signature="e#1624#1641#0" expanded="true" />
           </folding>
         </state>
       </provider>

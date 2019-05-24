@@ -55,7 +55,7 @@ struct LinearBVHNode;
 class BVHAccel : public Aggregate {
   public:
     // BVHAccel Public Types
-    enum class SplitMethod { SAH, HLBVH, Middle, EqualCounts, Distance }; // MSauer: Here is the enum for adding the method
+    enum class SplitMethod { SAH, HLBVH, Middle, EqualCounts, Distance }; 
 
     // BVHAccel Public Methods
     BVHAccel(std::vector<std::shared_ptr<Primitive>> p,
@@ -96,6 +96,8 @@ class BVHAccel : public Aggregate {
 
 std::shared_ptr<BVHAccel> CreateBVHAccelerator(
     std::vector<std::shared_ptr<Primitive>> prims, const ParamSet &ps);
+
+float CalculateCost(BVHBuildNode* currentNode);
 
 }  // namespace pbrt
 
