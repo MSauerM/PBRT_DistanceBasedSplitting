@@ -842,7 +842,9 @@ bool BVHAccel::IntersectP(const Ray &ray) const {
     int toVisitOffset = 0, currentNodeIndex = 0;
     while (true) {
         const LinearBVHNode *node = &nodes[currentNodeIndex];
+
         if (node->bounds.IntersectP(ray, invDir, dirIsNeg)) {
+            traversalSteps++;
             // Process BVH node _node_ for traversal
             if (node->nPrimitives > 0) {
                 for (int i = 0; i < node->nPrimitives; ++i) {

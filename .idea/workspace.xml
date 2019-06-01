@@ -8,15 +8,16 @@
       <config projectName="PBRT-V3" targetName="IlmImf-obj" />
       <config projectName="PBRT-V3" targetName="ExperimentalMemCheck" />
       <config projectName="PBRT-V3" targetName="Iex" />
+      <config projectName="PBRT-V3" targetName="stl_logging_unittest" />
       <config projectName="PBRT-V3" targetName="NightlyMemCheck" />
       <config projectName="PBRT-V3" targetName="ptxinfo" />
       <config projectName="PBRT-V3" targetName="ExperimentalUpdate" />
-      <config projectName="PBRT-V3" targetName="Half" />
       <config projectName="PBRT-V3" targetName="toFloat" />
       <config projectName="PBRT-V3" targetName="glog" />
       <config projectName="PBRT-V3" targetName="ContinuousMemCheck" />
       <config projectName="PBRT-V3" targetName="NightlySubmit" />
       <config projectName="PBRT-V3" targetName="Imath" />
+      <config projectName="PBRT-V3" targetName="Nightly" />
       <config projectName="PBRT-V3" targetName="ContinuousStart" />
       <config projectName="PBRT-V3" targetName="halftest" />
       <config projectName="PBRT-V3" targetName="ExperimentalBuild" />
@@ -24,36 +25,35 @@
       <config projectName="PBRT-V3" targetName="obj2pbrt" />
       <config projectName="PBRT-V3" targetName="NightlyConfigure" />
       <config projectName="PBRT-V3" targetName="ExperimentalTest" />
-      <config projectName="PBRT-V3" targetName="symbolize_unittest" />
       <config projectName="PBRT-V3" targetName="b44ExpLogTable" />
       <config projectName="PBRT-V3" targetName="dwaLookups" />
       <config projectName="PBRT-V3" targetName="rtest" />
       <config projectName="PBRT-V3" targetName="ExperimentalCoverage" />
       <config projectName="PBRT-V3" targetName="NightlyBuild" />
       <config projectName="PBRT-V3" targetName="NightlyCoverage" />
-      <config projectName="PBRT-V3" targetName="Nightly" />
+      <config projectName="PBRT-V3" targetName="IlmThread" />
       <config projectName="PBRT-V3" targetName="ExperimentalStart" />
       <config projectName="PBRT-V3" targetName="ContinuousTest" />
       <config projectName="PBRT-V3" targetName="pbrt_test" />
-      <config projectName="PBRT-V3" targetName="Continuous" />
-      <config projectName="PBRT-V3" targetName="IlmThread" />
+      <config projectName="PBRT-V3" targetName="ContinuousCoverage" />
+      <config projectName="PBRT-V3" targetName="symbolize_unittest" />
       <config projectName="PBRT-V3" targetName="Experimental" />
       <config projectName="PBRT-V3" targetName="logging_unittest" />
       <config projectName="PBRT-V3" targetName="signalhandler_unittest" />
+      <config projectName="PBRT-V3" targetName="utilities_unittest" />
+      <config projectName="PBRT-V3" targetName="Continuous" />
       <config projectName="PBRT-V3" targetName="imgtool" />
       <config projectName="PBRT-V3" targetName="pbrt_exe" />
       <config projectName="PBRT-V3" targetName="IexMath" />
-      <config projectName="PBRT-V3" targetName="CopyIlmBaseLibs" />
       <config projectName="PBRT-V3" targetName="stacktrace_unittest" />
+      <config projectName="PBRT-V3" targetName="wtest" />
       <config projectName="PBRT-V3" targetName="ContinuousUpdate" />
-      <config projectName="PBRT-V3" targetName="stl_logging_unittest" />
-      <config projectName="PBRT-V3" targetName="NightlyUpdate" />
       <config projectName="PBRT-V3" targetName="demangle_unittest" />
       <config projectName="PBRT-V3" targetName="bsdftest" />
-      <config projectName="PBRT-V3" targetName="ContinuousCoverage" />
+      <config projectName="PBRT-V3" targetName="CopyIlmBaseLibs" />
       <config projectName="PBRT-V3" targetName="cyhair2pbrt" />
       <config projectName="PBRT-V3" targetName="NightlyTest" />
-      <config projectName="PBRT-V3" targetName="utilities_unittest" />
+      <config projectName="PBRT-V3" targetName="Half" />
       <config projectName="PBRT-V3" targetName="pbrt" />
       <config projectName="PBRT-V3" targetName="Ptex_static" />
       <config projectName="PBRT-V3" targetName="ExperimentalConfigure" />
@@ -61,7 +61,7 @@
       <config projectName="PBRT-V3" targetName="ContinuousBuild" />
       <config projectName="PBRT-V3" targetName="NightlyMemoryCheck" />
       <config projectName="PBRT-V3" targetName="NightlyStart" />
-      <config projectName="PBRT-V3" targetName="wtest" />
+      <config projectName="PBRT-V3" targetName="NightlyUpdate" />
       <config projectName="PBRT-V3" targetName="ContinuousConfigure" />
     </generated>
   </component>
@@ -86,11 +86,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Release" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/accelerators/bvh.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
-              <caret line="155" column="40" lean-forward="true" selection-start-line="155" selection-start-column="40" selection-end-line="155" selection-end-column="40" />
+            <state relative-caret-position="270">
+              <caret line="848" column="40" lean-forward="true" selection-start-line="848" selection-start-column="40" selection-end-line="848" selection-end-column="40" />
               <folding>
                 <element signature="e#1502#1531#0" expanded="true" />
               </folding>
@@ -121,11 +121,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/accelerators/bvh.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="182">
-              <caret line="57" column="74" lean-forward="true" selection-start-line="57" selection-start-column="74" selection-end-line="57" selection-end-column="74" />
+            <state relative-caret-position="1425">
+              <caret line="95" selection-start-line="95" selection-end-line="95" />
               <folding>
                 <element signature="e#1498#1527#0" expanded="true" />
                 <element signature="e#1624#1641#0" expanded="true" />
@@ -146,8 +146,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/core/api.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="12510">
-              <caret line="834" column="17" selection-start-line="834" selection-start-column="17" selection-end-line="834" selection-end-column="17" />
+            <state relative-caret-position="12255">
+              <caret line="817" column="1" selection-start-line="817" selection-start-column="1" selection-end-line="817" selection-end-column="1" />
               <folding>
                 <element signature="e#1493#1509#0" expanded="true" />
                 <element signature="e#1679#1708#0" expanded="true" />
@@ -204,8 +204,8 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/src/accelerators/sahcostcalculator.h" />
         <option value="$PROJECT_DIR$/src/accelerators/sahcostcalculator.cpp" />
-        <option value="$PROJECT_DIR$/src/accelerators/bvh.cpp" />
         <option value="$PROJECT_DIR$/src/accelerators/bvh.h" />
+        <option value="$PROJECT_DIR$/src/accelerators/bvh.cpp" />
       </list>
     </option>
   </component>
@@ -220,6 +220,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -253,11 +254,11 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Raytracer_BA/pbrt-v3_PCA-BVH" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -688,12 +689,16 @@
       <workItem from="1558080894640" duration="1401000" />
       <workItem from="1558273492828" duration="2167000" />
       <workItem from="1558424046725" duration="6083000" />
-      <workItem from="1558684715811" duration="1058000" />
+      <workItem from="1558684715811" duration="1811000" />
+      <workItem from="1558941746425" duration="773000" />
+      <workItem from="1559305246099" duration="1584000" />
+      <workItem from="1559340989180" duration="984000" />
+      <workItem from="1559367642458" duration="1525000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111243000" />
+    <option name="totallyTimeSpent" value="116862000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -708,19 +713,19 @@
     <frame x="-1" y="0" width="1922" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14354323" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.178762" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32975295" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32867885" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32867885" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32975295" />
       <window_info anchor="bottom" id="Database Changes" order="7" />
       <window_info anchor="bottom" id="Messages" order="8" weight="0.32867885" />
-      <window_info anchor="bottom" id="Terminal" order="9" visible="true" weight="0.39957035" />
+      <window_info anchor="bottom" id="Terminal" order="9" weight="0.39849624" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32867885" />
       <window_info anchor="bottom" id="CMake" order="12" weight="0.32975295" />
@@ -786,8 +791,8 @@
     <entry file="file://$PROJECT_DIR$/src/accelerators/sahcostcalculator.cpp" />
     <entry file="file://$PROJECT_DIR$/src/accelerators/bvh.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="155" column="40" lean-forward="true" selection-start-line="155" selection-start-column="40" selection-end-line="155" selection-end-column="40" />
+        <state relative-caret-position="270">
+          <caret line="848" column="40" lean-forward="true" selection-start-line="848" selection-start-column="40" selection-end-line="848" selection-end-column="40" />
           <folding>
             <element signature="e#1502#1531#0" expanded="true" />
           </folding>
@@ -811,6 +816,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/accelerators/bvh.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1425">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+          <folding>
+            <element signature="e#1498#1527#0" expanded="true" />
+            <element signature="e#1624#1641#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/core/primitive.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1575">
@@ -820,22 +836,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/core/api.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12510">
-          <caret line="834" column="17" selection-start-line="834" selection-start-column="17" selection-end-line="834" selection-end-column="17" />
+        <state relative-caret-position="12255">
+          <caret line="817" column="1" selection-start-line="817" selection-start-column="1" selection-end-line="817" selection-end-column="1" />
           <folding>
             <element signature="e#1493#1509#0" expanded="true" />
             <element signature="e#1679#1708#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/accelerators/bvh.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="57" column="74" lean-forward="true" selection-start-line="57" selection-start-column="74" selection-end-line="57" selection-end-column="74" />
-          <folding>
-            <element signature="e#1498#1527#0" expanded="true" />
-            <element signature="e#1624#1641#0" expanded="true" />
           </folding>
         </state>
       </provider>
